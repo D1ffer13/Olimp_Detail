@@ -1,0 +1,246 @@
+/* Общие стили */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #2d3436;
+}
+
+/* Баннер */
+.banner-section {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('images/banner-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 200px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0, 123, 255, 0.2), rgba(0, 0, 0, 0.4));
+}
+
+.banner-section h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.banner-section .lead {
+    font-size: 1.5rem;
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+}
+
+/* Секции */
+section {
+    padding: 100px 0;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #007bff;
+    border-radius: 2px;
+}
+
+/* Карточки */
+.card {
+    transition: all 0.4s ease;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+/* Иконки */
+.fas {
+    color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.card:hover .fas {
+    transform: scale(1.1);
+}
+
+/* Команда */
+.team-section .card {
+    background: #fff;
+}
+
+.team-section .card-img-top {
+    height: 300px;
+    object-fit: cover;
+}
+
+.team-section .card-body {
+    padding: 1.5rem;
+}
+
+.team-section h5 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Преимущества */
+.advantages-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.advantages-section .fas {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #007bff, #00b894);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Отзывы */
+.testimonials-section {
+    background: #fff;
+}
+
+.testimonials-section .card {
+    background: #f8f9fa;
+    border-radius: 20px;
+}
+
+.testimonials-section .card-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.testimonials-section h5 {
+    font-weight: 600;
+    color: #007bff;
+}
+
+/* Призыв к действию */
+.cta-section {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url('images/cta-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0, 123, 255, 0.3), rgba(0, 0, 0, 0.5));
+}
+
+.cta-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-section h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.cta-section .btn-primary {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #007bff, #00b894);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.cta-section .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-section, .values-section, .team-section, 
+.advantages-section, .testimonials-section {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .banner-section {
+        padding: 150px 0;
+    }
+    
+    .banner-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .banner-section .lead {
+        font-size: 1.2rem;
+    }
+    
+    section h2 {
+        font-size: 2rem;
+    }
+    
+    .card {
+        margin-bottom: 30px;
+    }
+}
+
+/* Дополнительные стили для сертификатов */
+.certificates-section .card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Стили для звезд в отзывах */
+.text-warning .fas {
+    color: #ffc107;
+} 
